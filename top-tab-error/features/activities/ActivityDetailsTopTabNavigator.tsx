@@ -18,7 +18,7 @@ export default function ActivityDetailsTopTabNavigator() {
     <ActivityDetails.Navigator
       screenOptions={{
         tabBarActiveTintColor: '#024B90',
-        tabBarShowLabel: false,
+        tabBarShowLabel: true,
         tabBarShowIcon: true,
       }}
       tabBarPosition='top'
@@ -28,7 +28,8 @@ export default function ActivityDetailsTopTabNavigator() {
         component={ActivitySettingsScreen}
         options={{
           tabBarLabel: 'Settings',
-          tabBarIcon: ({ color }) => <TabBarIcon name='settings' color={color} testID='ActivitySettingsTab' />,
+          tabBarTestID: 'ActivitySettingsTab',
+          //tabBarIcon: ({ color }) => <TabBarIcon name='settings' color={color} testID='ActivitySettingsTab' />,
         }}
       />
       <ActivityDetails.Screen
@@ -37,7 +38,7 @@ export default function ActivityDetailsTopTabNavigator() {
         options={{
           tabBarLabel: 'Entries',
           tabBarTestID: 'ActivityEntriesTab',
-          tabBarIcon: ({ color }) => <TabBarIcon name='list' color={color} testID='ActivityEntriesTab' />,
+          //tabBarIcon: ({ color }) => <TabBarIcon name='list' color={color} testID='ActivityEntriesTab' />,
         }}
       /> 
     </ActivityDetails.Navigator>
