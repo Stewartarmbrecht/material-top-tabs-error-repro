@@ -27,10 +27,12 @@ export default function App() {
     <NavigationContainer>
         <Tab.Navigator style={{flex: 1}}>
           <Tab.Screen name="Home" component={HomeScreen} options={{
-            tabBarTestID: 'HomeTab'
+            tabBarTestID: 'HomeTab',
+            tabBarAccessibilityLabel: 'HomeTab'
           }} />
           <Tab.Screen name="Settings" component={SettingsScreen} options={{
-            tabBarTestID: 'SettingsTab'
+            tabBarTestID: 'SettingsTab',
+            tabBarAccessibilityLabel: 'SettingsTab'
           }} />
         </Tab.Navigator>
     </NavigationContainer>

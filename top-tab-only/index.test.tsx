@@ -15,17 +15,13 @@ jest.mock('react-native-pager-view', () => {
   };
 });
 
-describe('Activity Entries Screen', () => {
-  
-  describe('With an existing activity', () => {
-    it('should display the list of entries', async () => {
-      let app = render(<App />);
-      const button = await app.findByTestId('SettingsTab');
-      await fireEvent.press(button);
-      const screen = await app.findByTestId("SettingsScreen");
-      await within(screen).findByText('Settings');
-    });
+describe('App', () => {
+  it('should display the settings screen when the user clicks the Settings tab', async () => {
+    let app = render(<App />);
+    const button = await app.findByA11yLabel('SettingsTab')
+    await fireEvent.press(button);
+    const screen = await app.findByTestId("SettingsScreen");
+    await within(screen).findByText('Settings');
+  });
 
-  })
-    
 });
