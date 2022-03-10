@@ -23,8 +23,8 @@ const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   return (
+    <SafeAreaView style={{flex: 1}}>
     <NavigationContainer>
-      <SafeAreaView style={{flex: 1}}>
         <Tab.Navigator style={{flex: 1}}>
           <Tab.Screen name="Home" component={HomeScreen} options={{
             tabBarTestID: 'HomeTab'
@@ -33,16 +33,7 @@ export default function App() {
             tabBarTestID: 'SettingsTab'
           }} />
         </Tab.Navigator>
-      </SafeAreaView>
     </NavigationContainer>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
